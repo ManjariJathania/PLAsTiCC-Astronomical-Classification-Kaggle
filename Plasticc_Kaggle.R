@@ -1,5 +1,3 @@
-training_set <- read.csv("C:/Users//training_set.csv")
-View(training_set)
 training_set_metadata <- read.csv("C:/Users//training_set_metadata.csv")
 View(training_set_metadata)
 install.packages("neuralnet")
@@ -36,10 +34,3 @@ test_data= merge(
   all.x = T
 )
 testdf= data.frame(
-  test_data$mjd, test_data$passband, 
-  test_data$flux, test_data$flux_err, 
-  test_data$detected,
-  test_data$target
-)
-predictions = nn.predict(NN, test_data)
-error_rate = nn.test(NN, test_set, test_set_metadata, t=0.5)
